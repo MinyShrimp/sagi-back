@@ -1,2 +1,8 @@
 __pycache__
 venv
+db/*
+config.py
+.prettierrc
+build/*
+staticfiles/*
+template/*
