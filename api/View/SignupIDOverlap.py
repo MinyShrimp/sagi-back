@@ -10,6 +10,9 @@ class SignupIDOverlap(APIView):
     def post(self, request: Request):
         data: Final = request.data
 
+        # 데이터 검증
+
+        # ID 중복 체크
         isOverlap = Account.objects.filter(id = data["id"]).exists()
         if isOverlap:
             return Response("아이디 중복!", status=200)

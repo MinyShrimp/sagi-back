@@ -7,4 +7,5 @@
 ## 설치
 ```
 pip install django djangorestframework django-cors-headers mysqlclient
+pip install pycrypto
 ```
