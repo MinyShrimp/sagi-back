@@ -11,8 +11,4 @@ class Signup(APIView):
     def post(self, request: Request):
         data: Final = request.data
 
-        print(data)
-
-        # Account.objects.create(  )
-
-        return Response()
+        return Response({ "msg": "good", "code": "SIGNUP_OK" }, status=200)
