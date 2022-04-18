@@ -5,4 +5,4 @@ config.py
 .prettierrc
 build/*
 staticfiles/*
-template/*
+.env

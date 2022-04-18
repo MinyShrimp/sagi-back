@@ -1,0 +1,9 @@
+
+.git
+.prettierrc
+venv
+resources
+db
+.dockerignore
+docker-compose.yml
+Dockerfile
