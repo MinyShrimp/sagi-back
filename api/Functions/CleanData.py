@@ -2,6 +2,8 @@
 import re
 from typing import Final
 
+from api.Model.Account import Account
+
 def CheckEmail(email: str) -> bool:
     regex: Final = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}([.]\w{2,3})?$'
     return re.search( regex, email )
@@ -88,6 +90,24 @@ def isCleanLoginData( data: object ):
         return False
     
     if not isClearPwd(data):
+        return False
+    
+    return True
+
+def isCleanLogoutData( data: object ):
+    # 키 값이 정상적으로 왔는지
+    if not CheckKeys( list( data.keys() ), ["name", "email"] ):
+        return False
+    
+    # 값들의 자료형이 잘 왔는지
+    datas = data["name"], data["email"]
+    if not CheckTypes( datas, [ str, str ] ):
+        return False
+
+    if CheckInjection(data["name"]):
+        return False
+
+    if CheckInjection(data["email"]):
         return False
     
     return True

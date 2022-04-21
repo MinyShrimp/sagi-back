@@ -1,6 +1,7 @@
 
 import os
 from typing import Final
+from rest_framework.response   import Response
 from rest_framework.request    import Request
 from rest_framework.decorators import APIView
 
@@ -28,7 +29,7 @@ body: {
 }
 '''
 class Signup(APIView):
-    def post(self, request: Request):
+    def post(self, request: Request) -> Response:
         data: Final = request.data
 
         # 데이터 검증

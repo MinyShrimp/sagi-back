@@ -10,4 +10,4 @@ class AccountSerializer(serializers.ModelSerializer):
 class AccountLoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = [ "id", "pwd", "salt" ]
+        fields = [ "name", "email" ]
